@@ -1,5 +1,6 @@
 import { use } from "react";
 import type { DataType } from "../Type/Type";
+import { FaStar } from "react-icons/fa";
 
 interface techType {
   technologiesPromise: Promise<DataType[]>;
@@ -24,18 +25,45 @@ export const Technologies = ({ technologiesPromise }: techType) => {
         </p>
       </div>
       <div className="grid grid-cols-6 gap-2">
-        <div className="col-span-4 border">
-          <div>
+        {/* Left Side Box Model */}
+
+        <div className="col-span-4">
+          <div className="grid grid-cols-3 gap-3">
             {technologies.map((technology) => {
               return (
                 <div>
-                  <h1>{technology.name}</h1>
+                  <div className="card card-border bg-base-100 w-auto">
+                    <div className="card-body">
+                      <div className="flex justify-between items-center">
+                        <img className="w-7" src={technology.icon} alt="" />
+                        <h6
+                          className={`text-xs font-semibold px-3 py-1 rounded-full border ${technology.badgeColor}`}
+                        >
+                          {technology.badge}
+                        </h6>
+                      </div>
+                      <h2 className="card-title">{technology.name}</h2>
+                      <p>{technology.description}</p>
+                      <div className="divider" />
+                      <div className="flex items-center justify-between gap-1 mb-2 mt-0">
+                        <p>{technology.category}</p>
+                        <p>{technology.difficulty}</p>
+                        <FaStar className="text-[#FBBF24]" />
+                        <p>{technology.rating}</p>
+                      </div>
+                      <button className="bg-[#0A0F1D] w-full py-2.5 text-white rounded-2xl cursor-pointer">
+                        Add to Stack
+                      </button>
+                    </div>
+                  </div>
                 </div>
               );
             })}
           </div>
         </div>
-        <div className="col-span-2 border">Right Side Box</div>
+        {/* Right Side Box Model */}
+
+        <div className="col-span-2">Right Side Box</div>
       </div>
     </div>
   );

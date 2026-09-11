@@ -7,4 +7,5 @@ export interface DataType {
   rating: number;
   difficulty: string;
   badge: string;
+  badgeColor: string;
 }
