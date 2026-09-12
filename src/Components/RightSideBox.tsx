@@ -10,7 +10,7 @@ interface ITechType {
 
 export const RightSideBox = ({ stack, setStack }: ITechType) => {
   const handleRemove = (nameToRemove: string) => {
-    setStack(stack.filter((item) => item.name === nameToRemove));
+    setStack(stack.filter((item) => item.name !== nameToRemove));
   };
   const handleToRemoveAll = () => {
     setStack([]);
@@ -18,7 +18,7 @@ export const RightSideBox = ({ stack, setStack }: ITechType) => {
 
   return (
     <div className="col-span-2">
-      <div className="card card-border border-slate-100 p-6 bg-white">
+      <div className="card card-border border-slate-100 p-6 bg-white shadow-lg">
         <h3 className="text-xl font-bold text-[#0A0F1D]">Your Stack</h3>
         <p className="text-sm text-slate-400 mt-1 mb-6">
           {stack.length === 0
@@ -34,7 +34,7 @@ export const RightSideBox = ({ stack, setStack }: ITechType) => {
           </div>
         ) : (
           <div className="space-y-3">
-            <div className="space-y-3 max-h-90 overflow-y-auto pr-1">
+            <div className="space-y-3 max-h-auto overflow-y-auto pr-1">
               {stack.map((item) => (
                 <div
                   key={item.name}

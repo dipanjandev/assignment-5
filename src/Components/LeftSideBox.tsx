@@ -28,7 +28,7 @@ export const LeftSideBox = ({
           );
           return (
             <div key={ind}>
-              <div className="card card-border bg-base-100 w-auto">
+              <div className="card card-border bg-base-100 w-auto shadow-lg">
                 <div className="card-body">
                   <div className="flex justify-between items-center">
                     <img className="w-7" src={technology.icon} alt="" />

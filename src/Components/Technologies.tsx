@@ -31,7 +31,7 @@ export const Technologies = ({
         </p>
       </div>
 
-      <div className="grid grid-cols-6 gap-2">
+      <div className="grid grid-cols-6 gap-2 mb-20">
         <LeftSideBox
           technologiesPromise={technologiesPromise}
           stack={stack}
