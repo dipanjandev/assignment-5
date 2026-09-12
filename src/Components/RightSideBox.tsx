@@ -1,6 +1,7 @@
 import type { Dispatch, SetStateAction } from "react";
 import type { DataType } from "../Type/Type";
 import { IoCloseOutline } from "react-icons/io5";
+import { toast } from "react-toastify";
 
 interface ITechType {
   technologiesPromise?: Promise<DataType[]>;
@@ -11,9 +12,11 @@ interface ITechType {
 export const RightSideBox = ({ stack, setStack }: ITechType) => {
   const handleRemove = (nameToRemove: string) => {
     setStack(stack.filter((item) => item.name !== nameToRemove));
+    toast.error(`${nameToRemove} removed from stack`);
   };
   const handleToRemoveAll = () => {
     setStack([]);
+    toast.error("All items removed from stack");
   };
 
   return (
