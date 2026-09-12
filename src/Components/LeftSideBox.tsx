@@ -3,6 +3,7 @@
 import { use, type Dispatch, type SetStateAction } from "react";
 import { FaStar } from "react-icons/fa";
 import type { DataType } from "../Type/Type";
+import { toast } from "react-toastify";
 
 interface ItechType {
   technologiesPromise: Promise<DataType[]>;
@@ -50,6 +51,7 @@ export const LeftSideBox = ({
                     onClick={() => {
                       if (!isSelected) {
                         setStack([...stack, technology]);
+                        toast.success(`${technology.name} Added Successfully!`);
                       }
                     }}
                     className={`${isSelected ? "bg-gray-300 text-gray-500 cursor-not-allowed" : "bg-[#0A0F1D] cursor-pointer"} w-full py-2.5 text-white rounded-2xl `}

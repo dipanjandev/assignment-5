@@ -38,7 +38,11 @@ export const Technologies = ({
           setStack={setStack}
         />
 
-        <RightSideBox />
+        <RightSideBox
+          technologiesPromise={technologiesPromise}
+          stack={stack}
+          setStack={setStack}
+        />
       </div>
     </div>
   );
